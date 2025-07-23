@@ -10,17 +10,16 @@ export class AuthController {
     @Post('signup')
     signup(@Body() dto:AuthDto) {
         console.log({dto,});
-        console.log(typeof(dto.email))
         return this.authService.signup(dto);
     }
 
-    @Post('login')
-    login() {
-        return this.authService.login();
+    @Post('signin')
+    signin(@Body() dto:AuthDto) {
+        return this.authService.signin(dto);
     }
 
-    @Post('logout')
-    logout() {
+    @Post('signout')
+    signout() {
         return 'User logged out';
     }
 }
